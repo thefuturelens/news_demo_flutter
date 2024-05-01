@@ -147,7 +147,6 @@ class DetailScreen extends StatelessWidget {
         Text(
           articles?.description ?? "",
           style: const TextStyle(
-              overflow: TextOverflow.ellipsis,
               fontSize: FontSize.fontSize15,
               fontFamily: FontFamily.robotoRegular,
               color: ColorConfig.color212121,
