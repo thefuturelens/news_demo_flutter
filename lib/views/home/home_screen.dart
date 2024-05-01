@@ -64,9 +64,7 @@ class HomeScreen extends StatelessWidget {
                 child: GestureDetector(
                   onTap: () {
                     homeController.isSelected.value = index;
-                    if (index == 0) {
-                      homeController.dashboard();
-                    }
+
                   },
                   child: Container(
                     padding: const EdgeInsets.only(
