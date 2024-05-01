@@ -42,7 +42,7 @@ class HomeScreen extends StatelessWidget {
             if (homeController.isSelected.value == 0)
               NewsWidget()
             else
-              const FavWidget(),
+              FavWidget(),
           ],
         ),
       ),
@@ -64,6 +64,9 @@ class HomeScreen extends StatelessWidget {
                 child: GestureDetector(
                   onTap: () {
                     homeController.isSelected.value = index;
+                    if (index == 0) {
+                      homeController.dashboard();
+                    }
                   },
                   child: Container(
                     padding: const EdgeInsets.only(

@@ -2,6 +2,7 @@ class SizeConfig {
   static const double height0_14 = 0.14;
   static const double height0_245 = 0.245;
   static const double height1_2 = 1.2;
+  static const double height3 = 3;
   static const double height5 = 5;
   static const double height3_87 = 3.87;
   static const double height6 = 6;
@@ -31,4 +32,5 @@ class SizeConfig {
   static const double height36 = 36;
   static const double height85_15 = 85.15;
   static const double height96 = 96;
+  static const double height201 = 201;
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:news_demo_flutter/config/icon_config.dart';
 import 'package:news_demo_flutter/config/image_config.dart';
+import 'package:news_demo_flutter/model/dashboard_model.dart';
 import '../config/color_config.dart';
 import '../config/font_family.dart';
 import '../config/font_size.dart';
@@ -9,10 +10,14 @@ import '../config/size_config.dart';
 import '../config/string_config.dart';
 
 class SlidableButton extends StatelessWidget {
-  SlidableButton({this.flex = 1, this.autoClose = true, required this.onTap});
+  SlidableButton({
+    this.flex = 1,
+    this.autoClose = true,
+    required this.onTap,
+  });
   final int flex;
   final bool autoClose;
-  final Function() onTap;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +30,10 @@ class SlidableButton extends StatelessWidget {
           flex: flex,
           fit: FlexFit.tight,
           child: GestureDetector(
-            onTap: onTap,
+            onTap: () async {
+              onTap();
+              controller.close();
+            },
             child: Container(
               decoration: const BoxDecoration(
                 color: ColorConfig.colorFCD1D1,
