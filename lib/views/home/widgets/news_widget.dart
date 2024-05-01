@@ -13,7 +13,6 @@ import 'package:news_demo_flutter/config/size_config.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:news_demo_flutter/controller/home_controller.dart';
 import 'package:news_demo_flutter/views/home/detail_screen.dart';
-import 'package:flutter_html/flutter_html.dart' as html;
 
 class NewsWidget extends StatelessWidget {
   NewsWidget({Key? key}) : super(key: key);
@@ -140,17 +139,17 @@ class NewsWidget extends StatelessWidget {
                                           color: ColorConfig.color212121,
                                           fontWeight: FontWeight.w700),
                                     ),
-                                    html.Html(
-                                      data: homeController.dashboardModel.value
-                                              .articles?[index]?.content ??
+                                    Text(
+                                      homeController.dashboardModel.value
+                                              .articles?[index].description ??
                                           "",
-                                      style: {
-                                        '#': html.Style(
-                                            maxLines: 2,
-                                            textOverflow: TextOverflow.ellipsis,
-                                            padding: html.HtmlPaddings.zero,
-                                            margin: html.Margins.zero),
-                                      },
+                                      maxLines: 2,
+                                      style: const TextStyle(
+                                          overflow: TextOverflow.ellipsis,
+                                          fontSize: FontSize.fontSize15,
+                                          fontFamily: FontFamily.robotoRegular,
+                                          color: ColorConfig.color212121,
+                                          fontWeight: FontWeight.w400),
                                     ),
                                     _sizedBoxHeight(SizeConfig.height3),
                                     Row(

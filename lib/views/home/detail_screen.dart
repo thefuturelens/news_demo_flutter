@@ -11,7 +11,6 @@ import 'package:news_demo_flutter/config/size_config.dart';
 import 'package:news_demo_flutter/config/string_config.dart';
 import 'package:news_demo_flutter/model/dashboard_model.dart';
 import '../../config/font_size.dart';
-import 'package:flutter_html/flutter_html.dart' as html;
 
 class DetailScreen extends StatelessWidget {
   final Articles? articles;
@@ -145,12 +144,14 @@ class DetailScreen extends StatelessWidget {
           ],
         ),
         _sizedBoxHeight(SizeConfig.height22_63),
-        html.Html(
-          data: articles?.content ?? "",
-          style: {
-            '#': html.Style(
-                padding: html.HtmlPaddings.zero, margin: html.Margins.zero),
-          },
+        Text(
+          articles?.description ?? "",
+          style: const TextStyle(
+              overflow: TextOverflow.ellipsis,
+              fontSize: FontSize.fontSize15,
+              fontFamily: FontFamily.robotoRegular,
+              color: ColorConfig.color212121,
+              fontWeight: FontWeight.w400),
         ),
       ],
     );
